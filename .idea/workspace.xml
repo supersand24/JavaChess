@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7d8df614-c16b-4dac-97ea-a555a39e21f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Artifact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Artifact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Rook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
