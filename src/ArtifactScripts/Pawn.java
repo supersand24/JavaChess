@@ -1,5 +1,7 @@
 package ArtifactScripts;
 
+import BoardScripts.Board;
+
 public class Pawn extends Artifact{
 
     public boolean moved = false;
@@ -35,7 +37,7 @@ public class Pawn extends Artifact{
                 }
             //If target is one space away and on same column
             } else if (Math.abs(yTarget - yPos) == 1) {
-                if (board.isPlaceFull(new int[xTarget,yTarget])) {
+                if (board.isPlaceFull(new int[]{xTarget,yTarget})) {
                     System.out.println("Invalid Move, there is a chess piece in that spot, and a Pawn may not capture whats directly in front of it.");
                 } else {
                     canMove = true;
