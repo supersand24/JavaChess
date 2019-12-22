@@ -1,5 +1,7 @@
 package ArtifactScripts;
 
+import BoardScripts.Board;
+
 public class Artifact {
 
     public int xPos;
@@ -8,4 +10,75 @@ public class Artifact {
     public int team;
     public Character idCurrent;
     public Character idOther;
+
+    public boolean checkVertical(int xTarget, int yTarget, Board board) {
+        boolean canMove = false;
+        if (xPos == xTarget) {
+            //If going north
+            if (yTarget - yPos > 0) {
+                for (int pos = yPos + 1; pos <= yTarget; pos++) {
+                    if (board.isPlaceFull(new int[]{xPos, pos})) {
+                        System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + pos);
+                        break;
+                    } else {
+                        if (pos == yTarget) {
+                            canMove = true;
+                            break;
+                        }
+                    }
+                }
+            } else if (yTarget - yPos < 0) {
+                for (int pos = yPos - 1; pos >= yTarget; pos++) {
+                    if (board.isPlaceFull(new int[]{xPos, pos})) {
+                        System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + pos);
+                        break;
+                    } else {
+                        if (pos == yTarget) {
+                            canMove = true;
+                            break;
+                        }
+                    }
+                }
+            } else {
+                System.out.println("ERROR: checkVertical() tried to check horizontally.");
+            }
+        }
+        return canMove;
+    }
+
+    public boolean checkHorizontal(int xTarget, int yTarget, Board board) {
+        boolean canMove = false;
+        if (yPos == yTarget) {
+            //If going east
+            if (xTarget - xPos > 0) {
+                for (int pos = xPos + 1; pos <= xTarget; pos++) {
+                    if (board.isPlaceFull(new int[]{pos, yPos})) {
+                        System.out.println("Path Blocked, there is a piece in the way, at " + pos + ", " + yPos);
+                        break;
+                    } else {
+                        if (pos == xTarget) {
+                            canMove = true;
+                            break;
+                        }
+                    }
+                }
+            //If going west
+            } else if (yTarget - yPos < 0) {
+                for (int pos = xPos - 1; pos >= xTarget; pos++) {
+                    if (board.isPlaceFull(new int[]{pos, yPos})) {
+                        System.out.println("Path Blocked, there is a piece in the way, at " + pos + ", " + yPos);
+                        break;
+                    } else {
+                        if (pos == xTarget) {
+                            canMove = true;
+                            break;
+                        }
+                    }
+                }
+            } else {
+                System.out.println("ERROR: checkHorizontal() tried to check vertically.");
+            }
+        }
+        return canMove;
+    }
 }
