@@ -7,9 +7,21 @@ public class Pawn extends Artifact{
     public Pawn() {
         xPos = 1;
         yPos = 7;
-        id = "P";
         team = "White";
+        id = "X";
     }
+
+    public Pawn(int xPos, int yPos, String team) {
+        xPos = xPos;
+        yPos = yPos;
+        team = team;
+        if (team.equals("White")) {
+            id = "X";
+        } else  if (team.equals("Black")){
+            id = "Y";
+        }
+    }
+
 
     public boolean checkIfValidMove(int xTarget, int yTarget) {
         boolean canMove = false;
