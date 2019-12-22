@@ -1,3 +1,5 @@
+package ArtifactScripts;
+
 public class Knight extends Artifact{
 
     public Knight() {

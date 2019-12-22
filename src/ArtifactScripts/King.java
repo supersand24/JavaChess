@@ -1,3 +1,5 @@
+package ArtifactScripts;
+
 public class King extends Artifact {
 
     public King() {

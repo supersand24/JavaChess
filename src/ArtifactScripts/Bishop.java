@@ -1,3 +1,5 @@
+package ArtifactScripts;
+
 public class Bishop extends Artifact{
 
     public Bishop() {

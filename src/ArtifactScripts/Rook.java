@@ -1,3 +1,5 @@
+package ArtifactScripts;
+
 public class Rook extends Artifact{
 
     public Rook() {

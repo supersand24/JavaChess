@@ -1,3 +1,5 @@
+package ArtifactScripts;
+
 public class Pawn extends Artifact{
 
     public boolean moved = false;

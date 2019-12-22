@@ -1,3 +1,5 @@
+package ArtifactScripts;
+
 public class Queen extends Artifact{
 
     public Queen() {
