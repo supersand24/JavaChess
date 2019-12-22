@@ -21,7 +21,7 @@ public class Pawn extends Artifact{
     }
 
 
-    public boolean checkIfValidMove(int xTarget, int yTarget) {
+    public boolean checkIfValidMove(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
         //If target is on the same column
         if (xTarget == xPos) {
@@ -35,7 +35,11 @@ public class Pawn extends Artifact{
                 }
             //If target is one space away and on same column
             } else if (Math.abs(yTarget - yPos) == 1) {
-                canMove = true;
+                if (board.isPlaceFull(new int[xTarget,yTarget])) {
+                    System.out.println("Invalid Move, there is a chess piece in that spot, and a Pawn may not capture whats directly in front of it.");
+                } else {
+                    canMove = true;
+                }
             } else {
                 System.out.println("Invalid Move, you can only move 1 or 2(on the Pawn's first turn) spaces forwards.");
             }

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d8df614-c16b-4dac-97ea-a555a39e21f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Pawn.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,22 +67,30 @@
       <option name="project" value="LOCAL" />
       <updated>1576782751142</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed Pawn constructor">
+      <created>1577044314845</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577044314845</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Chess Artifacts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Chess Artifacts" />
+    <MESSAGE value="Fixed Pawn constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Pawn constructor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="583" y="197" key="#Project_Structure" timestamp="1576780590037">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="583" y="197" key="#Project_Structure/62.0.1858.1080@62.0.1858.1080" timestamp="1576780590037" />
-    <state x="645" y="133" key="CommitChangelistDialog2" timestamp="1576782746154">
+    <state x="645" y="133" key="CommitChangelistDialog2" timestamp="1577044311527">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="645" y="133" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1576782746154" />
+    <state x="645" y="133" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1577044311527" />
     <state x="800" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576782681218">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
