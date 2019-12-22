@@ -16,12 +16,12 @@ public class Artifact {
         if (xPos == xTarget) {
             //If going north
             if (yTarget - yPos > 0) {
-                for (int pos = yPos + 1; pos <= yTarget; pos++) {
-                    if (board.isPlaceFull(new int[]{xPos, pos})) {
-                        System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + pos);
+                for (int pos = 1; pos <= yTarget; pos++) {
+                    if (board.isPlaceFull(new int[]{xPos, (yPos + pos)})) {
+                        System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos + pos));
                         break;
                     } else {
-                        if (pos == yTarget) {
+                        if ((yPos + pos) == yTarget) {
                             canMove = true;
                             break;
                         }
@@ -29,12 +29,12 @@ public class Artifact {
                 }
             //If going South
             } else if (yTarget - yPos < 0) {
-                for (int pos = yPos - 1; pos >= yTarget; pos++) {
-                    if (board.isPlaceFull(new int[]{xPos, pos})) {
-                        System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + pos);
+                for (int pos = 1; pos <= yTarget; pos++) {
+                    if (board.isPlaceFull(new int[]{xPos, (yPos - pos)})) {
+                        System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos - pos));
                         break;
                     } else {
-                        if (pos == yTarget) {
+                        if ((yPos - pos) == yTarget) {
                             canMove = true;
                             break;
                         }
@@ -52,12 +52,12 @@ public class Artifact {
         if (yPos == yTarget) {
             //If going east
             if (xTarget - xPos > 0) {
-                for (int pos = xPos + 1; pos <= xTarget; pos++) {
-                    if (board.isPlaceFull(new int[]{pos, yPos})) {
-                        System.out.println("Path Blocked, there is a piece in the way, at " + pos + ", " + yPos);
+                for (int pos = 1; pos <= (Math.abs(xTarget - xPos)); pos++) {
+                    if (board.isPlaceFull(new int[]{(xPos + pos), yPos})) {
+                        System.out.println("Path Blocked, there is a piece in the way, at " + (xPos + pos) + ", " + yPos);
                         break;
                     } else {
-                        if (pos == xTarget) {
+                        if ((xPos + pos) == xTarget) {
                             canMove = true;
                             break;
                         }
@@ -65,12 +65,12 @@ public class Artifact {
                 }
             //If going west
             } else if (yTarget - yPos < 0) {
-                for (int pos = xPos - 1; pos >= xTarget; pos++) {
-                    if (board.isPlaceFull(new int[]{pos, yPos})) {
-                        System.out.println("Path Blocked, there is a piece in the way, at " + pos + ", " + yPos);
+                for (int pos = 1; pos <= (Math.abs(xTarget - xPos)); pos++) {
+                    if (board.isPlaceFull(new int[]{(xPos - pos), yPos})) {
+                        System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + yPos);
                         break;
                     } else {
-                        if (pos == xTarget) {
+                        if ((xPos - pos) == xTarget) {
                             canMove = true;
                             break;
                         }
