@@ -8,18 +8,16 @@ public class Pawn extends Artifact{
         xPos = 1;
         yPos = 7;
         team = "White";
-        id = "X";
+        idCurrent = 'X';
+        idOther = 'y';
     }
 
     public Pawn(int xPos, int yPos, String team) {
         xPos = xPos;
         yPos = yPos;
         team = team;
-        if (team.equals("White")) {
-            id = "X";
-        } else  if (team.equals("Black")){
-            id = "Y";
-        }
+        idCurrent = 'X';
+        idOther = 'y';
     }
 
 

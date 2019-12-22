@@ -6,6 +6,6 @@ public class Artifact {
     public int yPos;
     public boolean alive = true;
     public String team;
-    public String id;
-
+    public Character idCurrent;
+    public Character idOther;
 }
