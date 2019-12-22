@@ -20,11 +20,33 @@ public class Board {
             }
         }
     }
+    /*Board(Stack<TestPiece>rowOne,Stack<TestPiece>rowTwo/*,
+          Stack<TestPiece>rowSev,Stack<TestPiece>rowEig){
+        team = 0;
+        myboard = new Place[8][8];
+        for(int i = 0;i<8;i++){
+            for(int j = 0;j<8;j++){
+                myboard[i][j] = new Place(new int[] {i,j});
+            }
+        }
+        //if(!rowOne.empty()) rowFill(0,rowOne);
+        if(!rowTwo.empty()) rowFill(1,rowTwo);
+        //if(!rowSev.empty()) rowFill(6,rowSev);
+        //if(!rowEig.empty()) rowFill(7,rowEig);
+    }*/
+    public void rowFill(int rowN,Stack<TestPiece>row){
+        for(int i = 0;i<8;i++) {
+            TestPiece cur = row.pop();
+
+            if (cur!=null) {
+                myboard[rowN][i].addArtifact(cur);
+            }
+        }
+    }
 
     public Place[][] getMyboard() {
         return myboard;
     }
-
     public void setMyboard(Place[][] myboard) {
         this.myboard = myboard;
     }
@@ -102,8 +124,10 @@ public class Board {
     @Override
     public String toString() {
         String str = "";
+        System.out.println(str);
         for(int i =7;i>=0;i--){
             str = str+width[i]+' ';
+            //System.out.println(str);
             for(int j=0;j<8;j++){
                 str = str+myboard[i][j].toString(team);
             }
