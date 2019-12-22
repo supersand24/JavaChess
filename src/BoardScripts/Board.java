@@ -127,7 +127,7 @@ public class Board {
         System.out.println(str);
         for(int i =7;i>=0;i--){
             str = str+width[i]+' ';
-            //System.out.println(str);
+            //  System.out.println(str);
             for(int j=0;j<8;j++){
                 str = str+myboard[i][j].toString(team);
             }
