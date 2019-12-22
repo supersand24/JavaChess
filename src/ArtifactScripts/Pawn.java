@@ -7,12 +7,12 @@ public class Pawn extends Artifact{
     public Pawn() {
         xPos = 1;
         yPos = 7;
-        team = "White";
+        team = 0;
         idCurrent = 'X';
         idOther = 'y';
     }
 
-    public Pawn(int xPos, int yPos, String team) {
+    public Pawn(int xPos, int yPos, int team) {
         xPos = xPos;
         yPos = yPos;
         team = team;
@@ -42,15 +42,15 @@ public class Pawn extends Artifact{
         //If target is on the next column over
         } else if (Math.abs(xTarget - xPos) == 1) {
             if ((yTarget - yPos) > 0) {
-                if (team.equals("White")) {
+                if (team == 0) {
                     canMove = true;
-                } else if (team.equals("Black")) {
+                } else if (team == 1) {
                     System.out.println("Invalid Move, you are going the wrong direction.");
                 }
             } else if ((yTarget - yPos) < 0) {
-                if (team.equals("White")) {
+                if (team == 0) {
                     System.out.println("Invalid Move, you are going the wrong direction.");
-                } else if (team.equals("Black")) {
+                } else if (team == 1) {
                     canMove = true;
                 }
             } else {
