@@ -24,6 +24,9 @@ public class BoardTester {
         for(int i = 0; i<8;i++) bPawns.push(new TestPiece(1));
         TestBoard.rowFill(6,bPawns);
         System.out.println(TestBoard.toString());
+        //int Xcord =1;
+        //int Ycord =1;
+        //int x = myBoard.myboard[Xcord][Ycord].team;
     }
 
     private void flipTest(Board myBoard){
