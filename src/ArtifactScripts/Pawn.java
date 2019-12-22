@@ -12,10 +12,10 @@ public class Pawn extends Artifact{
         idOther = 'y';
     }
 
-    public Pawn(int xPos, int yPos, int team) {
-        xPos = xPos;
-        yPos = yPos;
-        team = team;
+    public Pawn(int xPos1, int yPos1, int team1) {
+        xPos = xPos1;
+        yPos = yPos1;
+        team = team1;
         idCurrent = 'X';
         idOther = 'y';
     }
