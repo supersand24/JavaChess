@@ -5,6 +5,7 @@ public class Pawn extends Artifact{
     public Pawn() {
         xPos = 1;
         yPos = 7;
+        id = "P";
     }
 
 }
