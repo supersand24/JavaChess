@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7d8df614-c16b-4dac-97ea-a555a39e21f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Artifact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Artifact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Bishop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/King.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Queen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Rook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BoardScripts/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoardScripts/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BoardScripts/BoardTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoardScripts/BoardTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BoardScripts/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoardScripts/Place.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,5 +138,13 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="800" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1858.1080@62.0.1858.1080" timestamp="1576782681218" />
+    <state x="577" y="0" width="789" height="728" key="find.popup" timestamp="1577152755798">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="577" y="0" width="789" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1577152755798" />
+    <state x="105" y="278" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1577149990817">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="105" y="278" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.728@0.0.1366.728" timestamp="1577149990817" />
   </component>
 </project>

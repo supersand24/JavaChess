@@ -1,5 +1,7 @@
 package BoardScripts;
 
+import ArtifactScripts.*;
+
 import java.util.Arrays;
 import java.util.Stack;
 
@@ -20,8 +22,8 @@ public class Board {
             }
         }
     }
-    /*Board(Stack<TestPiece>rowOne,Stack<TestPiece>rowTwo/*,
-          Stack<TestPiece>rowSev,Stack<TestPiece>rowEig){
+    /*Board(Stack<Artifact>rowOne,Stack<Artifact>rowTwo/*,
+          Stack<Artifact>rowSev,Stack<Artifact>rowEig){
         team = 0;
         myboard = new Place[8][8];
         for(int i = 0;i<8;i++){
@@ -34,9 +36,9 @@ public class Board {
         //if(!rowSev.empty()) rowFill(6,rowSev);
         //if(!rowEig.empty()) rowFill(7,rowEig);
     }*/
-    public void rowFill(int rowN,Stack<TestPiece>row){
+    public void rowFill(int rowN,Stack<Artifact>row){
         for(int i = 0;i<8;i++) {
-            TestPiece cur = row.pop();
+            Artifact cur = row.pop();
 
             if (cur!=null) {
                 myboard[rowN][i].addArtifact(cur);
@@ -75,7 +77,7 @@ public class Board {
     public void ChangePlace(int[] cords){
         myboard[cords[0]][cords[1]].removeArtifact();
     }
-    public void ChangePlace(int[] cords,TestPiece X){
+    public void ChangePlace(int[] cords, Artifact X){
         myboard[cords[0]][cords[1]].removeArtifact();
         myboard[cords[0]][cords[1]].addArtifact(X);
     }

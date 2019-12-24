@@ -17,12 +17,12 @@ public class BoardTester {
         }
         //TestBoard = new Board(/*new Stack<TestPiece>(),*/wPawns/*,new Stack<TestPiece>(),new Stack<TestPiece>()*/);
         TestBoard = new Board();
-        TestBoard.rowFill(1,wPawns);
+        //TestBoard.rowFill(1,wPawns);
 
         System.out.println("Fill row 7 with Black Pawns");
         Stack<TestPiece> bPawns = new Stack<TestPiece>();
         for(int i = 0; i<8;i++) bPawns.push(new TestPiece(1));
-        TestBoard.rowFill(6,bPawns);
+        //TestBoard.rowFill(6,bPawns);
         System.out.println(TestBoard.toString());
         //int Xcord =1;
         //int Ycord =1;
@@ -40,8 +40,8 @@ public class BoardTester {
     private void pieceTest(Board myBoard){
         TestPiece myPiece = new TestPiece();
         TestPiece myOPiece= new TestPiece(1);
-        myBoard.ChangePlace(new int[]{1,0},myPiece);
-        myBoard.ChangePlace(new int[]{6,5},myOPiece);
+        //myBoard.ChangePlace(new int[]{1,0},myPiece);
+        //myBoard.ChangePlace(new int[]{6,5},myOPiece);
         System.out.println("New board post adding 2 pieces");
         System.out.println(myBoard.toString());
     }

@@ -1,10 +1,10 @@
 package BoardScripts;
 
-import BoardScripts.TestPiece;
+import ArtifactScripts.Artifact;
 
 public class Place {
     Boolean isFull;
-    TestPiece Piece;
+    Artifact Piece;
     char displayChar;
     char offChar;
     int[] cords = new int[2];
@@ -19,16 +19,16 @@ public class Place {
         team = 0;
 
     }
-    Place(int[] cords,TestPiece A){
+    Place(int[] cords,Artifact A){
         this.cords[0] = cords[0];
         this.cords[1] = cords[1];
         addArtifact(A);
     }
-    public void addArtifact(TestPiece A){
+    public void addArtifact(Artifact A){
         isFull = true;
         Piece = A;
-        displayChar = A.getDisplayChar();//sub with a real method soon
-        offChar = A.offChar;
+        displayChar = A.idCurrent;//sub with a real method soon
+        offChar = A.idOther;
         team = A.team;
     }
     public void removeArtifact(){
@@ -47,7 +47,7 @@ public class Place {
     public Object getPiece() {
         return Piece;
     }
-    public void setPiece(TestPiece piece) {
+    public void setPiece(Artifact piece) {
         Piece = piece;
     }
     public char getDisplayChar() {

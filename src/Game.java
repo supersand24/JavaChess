@@ -72,7 +72,7 @@ public class Game {
         bArts.push(new Knight());bArts.push(new Rook());
 
         //rowfill all!
-        //b.rowFill(0,wArts);
+        b.rowFill(0,wArts);
         //setBlack
 
 
