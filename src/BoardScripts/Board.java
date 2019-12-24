@@ -9,7 +9,7 @@ public class Board {
     int[] width;
 
     //empty board
-    Board(){
+    public Board(){
         width = new int[] {1,2,3,4,5,6,7,8};
         //height = width;
         team = 0;
