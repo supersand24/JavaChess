@@ -47,23 +47,30 @@ public class Game {
              */
             moveCords = move.split("\\s+");
             try{
-                start[0]=Integer.parseInt(moveCords[0]);
-                start[1]=Integer.parseInt(moveCords[1]);
+                //note the start coordinates are reversed not sure why the have to be
+                start[0]=Integer.parseInt(moveCords[1]);
+                start[1]=Integer.parseInt(moveCords[0]);
                 dest[0] =Integer.parseInt(moveCords[2]);
                 dest[1] =Integer.parseInt(moveCords[3]);
             }catch(Exception e){
                 System.out.println("Invalid move: Wrong format please" +
                         " enter 4 digits separated by spaces!");
             }
-            peiceToMove = GameBoard.myboard[start[0]][start[1]].getPiece();
-            //debug move id
-            System.out.print("you want to move: ");
-            System.out.print(GameBoard.myboard[start[0]][start[1]].toString
-                    (GameBoard.getTeam()));
-            System.out.print(" to ");
-            System.out.println("("+dest[0]+","+dest[1]+")");
-            //debug legal move Authentication
-            peiceToMove.checkIfValidMove(dest[0],dest[1],GameBoard);
+            try {
+                peiceToMove = GameBoard.myboard[start[0]][start[1]].getPiece();
+                //debug move id
+                System.out.print("you want to move: ");
+                System.out.print(GameBoard.myboard[start[0]][start[1]].toString
+                        (GameBoard.getTeam()));
+                System.out.print(" to ");
+                System.out.println("(" + GameBoard.numToChar(dest[0]+1) + "," + (dest[1]+1) + ")");
+                //debug legal move Authentication
+                peiceToMove.xPos = start[0];
+                peiceToMove.yPos = start[1];
+                peiceToMove.checkIfValidMove(dest[0], dest[1], GameBoard);
+            }catch(Exception e){
+                System.out.println("invalid move: no valid piece to make move!");
+            }
         }while(activeGame);
 
         //exit
