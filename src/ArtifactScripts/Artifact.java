@@ -146,4 +146,9 @@ public class Artifact {
     public void setTeam(int team) {
         this.team = team;
     }
+
+    public boolean checkIfValidMove(int xTarget, int yTarget, Board board){
+        System.out.println("Validity unknown!");
+        return false;
+    }
 }

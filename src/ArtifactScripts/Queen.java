@@ -11,6 +11,7 @@ public class Queen extends Artifact{
         idOther = 'q';
     }
 
+    @Override
     public boolean checkIfValidMove(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
         if (checkVertical(xTarget, yTarget, board) || checkHorizontal(xTarget, yTarget, board) || checkDiagonally(xTarget, yTarget, board)) {

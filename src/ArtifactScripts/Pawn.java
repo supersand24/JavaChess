@@ -22,7 +22,7 @@ public class Pawn extends Artifact{
         idOther = 'y';
     }
 
-
+    @Override
     public boolean checkIfValidMove(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
         //If target is on the same column
