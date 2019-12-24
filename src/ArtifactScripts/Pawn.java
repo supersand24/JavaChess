@@ -1,5 +1,7 @@
 package ArtifactScripts;
 
+import BoardScripts.Board;
+
 public class Pawn extends Artifact{
 
     public boolean moved = false;
@@ -7,11 +9,21 @@ public class Pawn extends Artifact{
     public Pawn() {
         xPos = 1;
         yPos = 7;
-        id = "P";
-        team = "White";
+        team = 0;
+        idCurrent = 'X';
+        idOther = 'y';
     }
 
-    public boolean checkIfValidMove(int xTarget, int yTarget) {
+    public Pawn(int xPos1, int yPos1, int team1) {
+        xPos = xPos1;
+        yPos = yPos1;
+        team = team1;
+        idCurrent = 'X';
+        idOther = 'y';
+    }
+
+
+    public boolean checkIfValidMove(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
         //If target is on the same column
         if (xTarget == xPos) {
@@ -25,22 +37,26 @@ public class Pawn extends Artifact{
                 }
             //If target is one space away and on same column
             } else if (Math.abs(yTarget - yPos) == 1) {
-                canMove = true;
+                if (board.isPlaceFull(new int[]{xTarget,yTarget})) {
+                    System.out.println("Invalid Move, there is a chess piece in that spot, and a Pawn may not capture whats directly in front of it.");
+                } else {
+                    canMove = true;
+                }
             } else {
                 System.out.println("Invalid Move, you can only move 1 or 2(on the Pawn's first turn) spaces forwards.");
             }
         //If target is on the next column over
         } else if (Math.abs(xTarget - xPos) == 1) {
             if ((yTarget - yPos) > 0) {
-                if (team.equals("White")) {
+                if (team == 0) {
                     canMove = true;
-                } else if (team.equals("Black")) {
+                } else if (team == 1) {
                     System.out.println("Invalid Move, you are going the wrong direction.");
                 }
             } else if ((yTarget - yPos) < 0) {
-                if (team.equals("White")) {
+                if (team == 0) {
                     System.out.println("Invalid Move, you are going the wrong direction.");
-                } else if (team.equals("Black")) {
+                } else if (team == 1) {
                     canMove = true;
                 }
             } else {
