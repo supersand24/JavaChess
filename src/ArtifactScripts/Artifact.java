@@ -142,4 +142,8 @@ public class Artifact {
         }
         return canMove;
     }
+
+    public void setTeam(int team) {
+        this.team = team;
+    }
 }

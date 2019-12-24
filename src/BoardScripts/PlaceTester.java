@@ -6,8 +6,8 @@ public class PlaceTester {
         Place myPlace = new Place(new int[]{0,0});
         System.out.print(myPlace.toString());
         TestPiece myPiece = new TestPiece();
-        Place myFullP = new Place(new int[]{0,1},myPiece);
-        System.out.println(myFullP);
+        //Place myFullP = new Place(new int[]{0,1},myPiece);
+        //System.out.println(myFullP);
 
     }
 }

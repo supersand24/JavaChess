@@ -44,7 +44,7 @@ public class Place {
     public void setFull(Boolean full) {
         isFull = full;
     }
-    public Object getPiece() {
+    public Artifact getPiece() {
         return Piece;
     }
     public void setPiece(Artifact piece) {

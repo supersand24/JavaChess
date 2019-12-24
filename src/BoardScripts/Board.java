@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class Board {
-    Place[][] myboard;
+    public Place[][] myboard;
     int team;//0 = white 1 = black
     int[] width;
 

@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7d8df614-c16b-4dac-97ea-a555a39e21f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ArtifactScripts/Artifact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArtifactScripts/Artifact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BoardScripts/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoardScripts/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BoardScripts/BoardTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoardScripts/BoardTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BoardScripts/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoardScripts/Place.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BoardScripts/PlaceTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoardScripts/PlaceTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,22 +115,22 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="645" y="133" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1576782746154" />
-    <state width="705" height="171" key="GridCell.Tab.0.bottom" timestamp="1577146145324">
+    <state width="705" height="196" key="GridCell.Tab.0.bottom" timestamp="1577180177009">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="705" height="171" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577146145324" />
-    <state width="705" height="171" key="GridCell.Tab.0.center" timestamp="1577146145324">
+    <state width="705" height="196" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577180177009" />
+    <state width="705" height="196" key="GridCell.Tab.0.center" timestamp="1577180177009">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="705" height="171" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577146145324" />
-    <state width="705" height="171" key="GridCell.Tab.0.left" timestamp="1577146145323">
+    <state width="705" height="196" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577180177009" />
+    <state width="705" height="196" key="GridCell.Tab.0.left" timestamp="1577180177008">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="705" height="171" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577146145323" />
-    <state width="705" height="171" key="GridCell.Tab.0.right" timestamp="1577146145324">
+    <state width="705" height="196" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577180177008" />
+    <state width="705" height="196" key="GridCell.Tab.0.right" timestamp="1577180177009">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="705" height="171" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577146145324" />
+    <state width="705" height="196" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577180177009" />
     <state x="55" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1577139877158">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
