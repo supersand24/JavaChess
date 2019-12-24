@@ -33,7 +33,21 @@ public class Pawn extends Artifact{
                 if (moved) {
                     System.out.println("Invalid Move, you can only move two spaces only on the first turn of that Pawn.");
                 } else {
-                    canMove = true;
+                    //Going Down
+                    if ((yTarget - yPos) > 0) {
+                        if (board.isPlaceFull(new int[]{xPos, yPos + 1})) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos + 1));
+                        } else {
+                            canMove = true;
+                        }
+                    //Going Up
+                    } else {
+                        if (board.isPlaceFull(new int[]{xPos, yPos - 1})) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos - 1));
+                        } else {
+                            canMove = true;
+                        }
+                    }
                 }
             //If target is one space away and on same column
             } else if (Math.abs(yTarget - yPos) == 1) {
