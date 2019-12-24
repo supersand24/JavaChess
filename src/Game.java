@@ -1,7 +1,10 @@
+import ArtifactScripts.*;
 import BoardScripts.Board;
 import BoardScripts.Place;
 
 import java.util.Scanner;
+import java.util.Stack;
+
 public class Game {
 
     public static void main(String[] args) {
@@ -49,11 +52,29 @@ public class Game {
     private static Board startGame(Board b){
         b = new Board();
         //building White pawns
+        Stack<Artifact> wPawns = new Stack<Artifact>();
+        for(int i = 0; i<8;i++) wPawns.push(new Pawn());
         //building White pieces
-        //building black Pawns
+        Stack<Artifact> wArts = new Stack<Artifact>();
+        wArts.push(new Rook());wArts.push(new Knight());
+        wArts.push(new Bishop());wArts.push(new Queen());
+        wArts.push(new King());wArts.push(new Bishop());
+        wArts.push(new Knight());wArts.push(new Rook());
+
+        //building black Pawns note teams are not set here
+        Stack<Artifact> bPawns = new Stack<Artifact>();
+        for(int i = 0; i<8;i++) bPawns.push(new Pawn());
         //building black pieces
+        Stack<Artifact> bArts = new Stack<Artifact>();
+        bArts.push(new Rook());bArts.push(new Knight());
+        bArts.push(new Bishop());bArts.push(new Queen());
+        bArts.push(new King());bArts.push(new Bishop());
+        bArts.push(new Knight());bArts.push(new Rook());
 
         //rowfill all!
+        //b.rowFill(0,wArts);
+        //setBlack
+
 
         System.out.println("The Game Has begun!");
         System.out.println(b.toString());
