@@ -11,11 +11,9 @@ public class Artifact {
     public Character idCurrent;
     public Character idOther;
 
-    public void wasSuccessfulMove(boolean success, int xTarget, int yTarget) {
-        if (success){
-            xPos = xTarget;
-            yPos = yTarget;
-        }
+    public void newCoords(int xTarget, int yTarget) {
+        xPos = xTarget;
+        yPos = yTarget;
     }
 
     public boolean checkVertical(int xTarget, int yTarget, Board board) {
