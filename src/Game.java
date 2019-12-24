@@ -14,7 +14,7 @@ public class Game {
         intro();
 
         String[] moveCords;
-        Artifact PeicetoMove;
+        Artifact peiceToMove;
         int start[]= new int[2];
         int dest[] = new int[2];
 
@@ -55,14 +55,15 @@ public class Game {
                 System.out.println("Invalid move: Wrong format please" +
                         " enter 4 digits separated by spaces!");
             }
-            PeicetoMove = GameBoard.myboard[start[0]][start[1]].getPiece();
-            //debug text move id
+            peiceToMove = GameBoard.myboard[start[0]][start[1]].getPiece();
+            //debug move id
             System.out.print("you want to move: ");
             System.out.print(GameBoard.myboard[start[0]][start[1]].toString
                     (GameBoard.getTeam()));
             System.out.print(" to ");
             System.out.println("("+dest[0]+","+dest[1]+")");
             //debug legal move Authentication
+            peiceToMove.checkIfValidMove(dest[0],dest[1],GameBoard);
         }while(activeGame);
 
         //exit
