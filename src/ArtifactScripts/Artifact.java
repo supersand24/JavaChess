@@ -11,6 +11,13 @@ public class Artifact {
     public Character idCurrent;
     public Character idOther;
 
+    public void wasSuccessfulMove(boolean success, int xTarget, int yTarget) {
+        if (success){
+            xPos = xTarget;
+            yPos = yTarget;
+        }
+    }
+
     public boolean checkVertical(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
         if (xPos == xTarget) {
@@ -64,7 +71,7 @@ public class Artifact {
                     }
                 }
             //If going west
-            } else if (yTarget - yPos < 0) {
+            } else if (xTarget - xPos < 0) {
                 for (int pos = 1; pos <= (Math.abs(xTarget - xPos)); pos++) {
                     if (board.isPlaceFull(new int[]{(xPos - pos), yPos})) {
                         System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + yPos);
