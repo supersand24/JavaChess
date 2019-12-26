@@ -63,7 +63,7 @@ public class Pawn extends Artifact{
                 System.out.println("Invalid Move, you can only move 1 or 2(on the Pawn's first turn) spaces forwards.");
             }
         //If target is on the next column over
-        } else if (Math.abs(xTarget - xPos) == 1 || Math.abs(yTarget - yPos) == 1) {
+        } else if (Math.abs(xTarget - xPos) == 1 && Math.abs(yTarget - yPos) == 1) {
             System.out.println("Attacking");
             if ((yTarget - yPos) > 0) {
                 if (team == 0) {
