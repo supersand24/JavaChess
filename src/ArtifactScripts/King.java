@@ -18,9 +18,9 @@ public class King extends Artifact {
                 canMove = true;
             } else {
                 System.out.println("Invalid Move, you can only move horizontally, vertically, or diagonally 1 space with a King.");
-                debugger(xTarget,yTarget);
             }
         }
+        debugger(xTarget,yTarget);
         return canMove;
     }
 
