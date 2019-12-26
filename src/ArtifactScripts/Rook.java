@@ -14,6 +14,8 @@ public class Rook extends Artifact{
     @Override
     public boolean checkIfValidMove(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
+        xTarget += 1;
+        yTarget += 1;
         if (checkVertical(xTarget, yTarget, board) || checkHorizontal(xTarget, yTarget, board)) {
             canMove = true;
         } else {

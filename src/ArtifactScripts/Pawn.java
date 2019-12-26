@@ -25,6 +25,8 @@ public class Pawn extends Artifact{
     @Override
     public boolean checkIfValidMove(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
+        xTarget += 1;
+        yTarget += 1;
         //If target is on the same column
         if (xTarget == xPos) {
             //If target is two spaces away and on same column
@@ -33,7 +35,21 @@ public class Pawn extends Artifact{
                 if (moved) {
                     System.out.println("Invalid Move, you can only move two spaces only on the first turn of that Pawn.");
                 } else {
-                    canMove = true;
+                    //Going Down
+                    if ((yTarget - yPos) > 0) {
+                        if (board.isPlaceFull(new int[]{xPos, yPos + 1})) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos + 1));
+                        } else {
+                            canMove = true;
+                        }
+                    //Going Up
+                    } else {
+                        if (board.isPlaceFull(new int[]{xPos, yPos - 1})) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos - 1));
+                        } else {
+                            canMove = true;
+                        }
+                    }
                 }
             //If target is one space away and on same column
             } else if (Math.abs(yTarget - yPos) == 1) {

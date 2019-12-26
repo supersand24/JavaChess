@@ -13,6 +13,8 @@ public class Bishop extends Artifact{
     @Override
     public boolean checkIfValidMove(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
+        xTarget += 1;
+        yTarget += 1;
         if (checkDiagonally(xTarget, yTarget, board)) {
             canMove = true;
         } else {
