@@ -13,6 +13,8 @@ public class Knight extends Artifact{
 
     public boolean checkIfValidMove(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
+        xTarget += 1;
+        yTarget += 1;
         if (Math.abs(yTarget - yPos) == 2 && Math.abs(xTarget - xPos) == 1) {
             canMove = true;
         } else if (Math.abs(xTarget - xPos) == 2 && Math.abs(yTarget - yPos) == 1) {

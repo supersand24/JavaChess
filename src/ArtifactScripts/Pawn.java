@@ -25,6 +25,8 @@ public class Pawn extends Artifact{
 
     public boolean checkIfValidMove(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
+        xTarget += 1;
+        yTarget += 1;
         //If target is on the same column
         if (xTarget == xPos) {
             //If target is two spaces away and on same column
