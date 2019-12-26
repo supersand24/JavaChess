@@ -8,35 +8,23 @@ import java.util.Stack;
 public class Game {
 
     public static void main(String[] args) {
+        //<editor-fold desc="vars">
         Scanner userIn = new Scanner(System.in);
         Boolean activeGame = false;
         Board GameBoard = new Board();
+        String command = "";
         intro();
 
         String[] moveCords;
-        Artifact peiceToMove;
+        Artifact peiceToMove = new Pawn();
         int start[]= new int[2];
         int dest[] = new int[2];
-
+        boolean valid = true;
+        //</editor-fold>
         do{
-            String command;
-            //System.out.println("Please enter a command");
-            //command = x.nextLine();
             //start the game
-            while(!activeGame){
-                System.out.print("Shall we play a game?\nY/N:");
-                command = userIn.nextLine();
-                if(command.equalsIgnoreCase("y")){
-                    GameBoard = startGame(GameBoard);
-                    activeGame = true;
-                }else if(command.equalsIgnoreCase("n")){
-                    System.out.println("Alright");
-                    userIn.close();
-                    exit();
-
-                }else
-                    System.out.println("invalid command!");
-            }
+            GameBoard = inactiveGame(activeGame,command,userIn,GameBoard);
+            activeGame = true;
 
             System.out.print("Make a move: ");
             String move = userIn.nextLine();
@@ -46,41 +34,88 @@ public class Game {
             feature is undeveloped.
              */
             moveCords = move.split("\\s+");
-            try{
-                start[0]=Integer.parseInt(moveCords[0]);
-                start[1]=Integer.parseInt(moveCords[1]);
-                dest[0] =Integer.parseInt(moveCords[2]);
-                dest[1] =Integer.parseInt(moveCords[3]);
-            }catch(Exception e){
-                System.out.println("Invalid move: Wrong format please" +
-                        " enter 4 digits separated by spaces!");
-            }
+            Boolean validInput = validMoveInput(moveCords);
+            if(!validInput) continue;
+            //note the start coordinates are reversed not sure why the have to be
+            start[0]=Integer.parseInt(moveCords[1]);
+            start[1]=Integer.parseInt(moveCords[0]);
+            dest[0] =Integer.parseInt(moveCords[2]);
+            dest[1] =Integer.parseInt(moveCords[3]);
+
             peiceToMove = GameBoard.myboard[start[0]][start[1]].getPiece();
+            //is actual piece
+            Boolean real = isReal(peiceToMove);
             //debug move id
-            System.out.print("you want to move: ");
-            System.out.print(GameBoard.myboard[start[0]][start[1]].toString
-                    (GameBoard.getTeam()));
-            System.out.print(" to ");
-            System.out.println("("+dest[0]+","+dest[1]+")");
+            debugID(GameBoard,start,dest);
             //debug legal move Authentication
-            peiceToMove.checkIfValidMove(dest[0],dest[1],GameBoard);
+            peiceToMove.newCoords(start[0],start[1]);
+            valid = peiceToMove.checkIfValidMove(dest[0], dest[1], GameBoard);
+
+            //move method
+            if (valid&&real) {
+                    GameBoard = move(peiceToMove,start,dest,GameBoard);
+                }
+
         }while(activeGame);
 
         //exit
         exit();
     }
 
+    //verification methods
+    private static boolean isReal(Artifact peiceToMove) {
+        if (peiceToMove.idCurrent.equals(' ')){
+            System.out.println("not a valid piece!");
+            return false;
+        }
+        return true;
+    }
+    private static boolean validMoveInput(String[] in){
+        try{
+            int[] s = new int[4];
+            s[0]=Integer.parseInt(in[1]);
+            s[1]=Integer.parseInt(in[0]);
+            s[0] =Integer.parseInt(in[2]);
+            s[1] =Integer.parseInt(in[3]);
+        }catch(Exception e){
+            System.out.println("Invalid move: Wrong format please" +
+                    " enter 4 digits separated by spaces!");
+            return false;
+        }
+        return true;
+    }
+    //debug methods
+    private static void debugID(Board GameBoard,int[] start,int[]dest) {
+        System.out.print("you want to move: ");
+        System.out.print(GameBoard.myboard[start[0]][start[1]].toString
+                (GameBoard.getTeam()));
+        System.out.print(" to ");
+        System.out.println("(" + GameBoard.numToChar(dest[0]+1) + "," + (dest[1]+1) + ")");
+
+    }
+
+    //these methods change game state
     private static void intro(){
         System.out.println("Welcome to Java Chess!");
 
     }
-    private static void exit(){
-        System.out.println("goodBye!");
-        System.exit(1);
-    }
-    //private static String commandParse(){
+    private static Board inactiveGame(Boolean activeGame,String command,Scanner userIn,Board GameBoard){
+        while(!activeGame){
+            System.out.print("Shall we play a game?\nY/N:");
+            command = userIn.nextLine();
+            if(command.equalsIgnoreCase("y")){
+                GameBoard = startGame(GameBoard);
+                activeGame = true;
+            }else if(command.equalsIgnoreCase("n")){
+                System.out.println("Alright");
+                userIn.close();
+                exit();
 
-    //}
+            }else
+                System.out.println("invalid command!");
+        }
+        return GameBoard;
+    }
     private static Board startGame(Board b){
         b = new Board();
         //building White pawns
@@ -121,5 +156,23 @@ public class Game {
         System.out.println(b.toString());
         return b;
 
+    }
+    private static void exit(){
+        System.out.println("goodBye!");
+        System.exit(1);
+    }
+    //private static String commandParse(){
+
+    //}
+
+    //board manipulation methods
+    private static Board move(Artifact peiceToMove, int start[],int dest[],Board GameBoard){
+        GameBoard.myboard[dest[1]][dest[0]].addArtifact(peiceToMove);
+        GameBoard.myboard[start[0]][start[1]].removeArtifact();
+        //debug
+        System.out.println("PieceMoved");
+        GameBoard.flipBoard();
+        System.out.println(GameBoard.toString());
+        return GameBoard;
     }
 }
