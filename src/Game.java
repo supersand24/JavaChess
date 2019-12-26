@@ -14,9 +14,10 @@ public class Game {
         intro();
 
         String[] moveCords;
-        Artifact peiceToMove;
+        Artifact peiceToMove = new Pawn();
         int start[]= new int[2];
         int dest[] = new int[2];
+        boolean valid = true;
 
         do{
             String command;
@@ -65,12 +66,21 @@ public class Game {
                 System.out.print(" to ");
                 System.out.println("(" + GameBoard.numToChar(dest[0]+1) + "," + (dest[1]+1) + ")");
                 //debug legal move Authentication
-                peiceToMove.xPos = start[0];
-                peiceToMove.yPos = start[1];
-                peiceToMove.checkIfValidMove(dest[0], dest[1], GameBoard);
+                peiceToMove.newCoords(start[0],start[1]);
+                valid = peiceToMove.checkIfValidMove(dest[0], dest[1], GameBoard);
             }catch(Exception e){
                 System.out.println("invalid move: no valid piece to make move!");
             }
+            //move method
+                if (valid == true) {
+                    GameBoard.myboard[dest[0]][dest[1]].addArtifact(peiceToMove);
+                    GameBoard.myboard[start[1]][start[0]].removeArtifact();
+                    //debug
+                    System.out.println("PieceMoved");
+                    GameBoard.flipBoard();
+                    GameBoard.toString();
+                }
+
         }while(activeGame);
 
         //exit
