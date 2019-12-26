@@ -20,6 +20,7 @@ public class Rook extends Artifact{
             canMove = true;
         } else {
             System.out.println("Invalid Move, you can only move horizontally or vertically with a Rook.");
+            debugger(xTarget,yTarget);
         }
         return canMove;
     }

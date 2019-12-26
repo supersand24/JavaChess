@@ -19,6 +19,7 @@ public class Bishop extends Artifact{
             canMove = true;
         } else {
             System.out.println("Invalid Move, you can only move diagonally with a Bishop.");
+            debugger(xTarget,yTarget);
         }
         return canMove;
     }
