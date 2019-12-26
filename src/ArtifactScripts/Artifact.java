@@ -15,6 +15,8 @@ public class Artifact {
         System.out.println("yPos = " + yPos);
         System.out.println("xTarget = " + xTarget);
         System.out.println("yTarget = " + yTarget);
+        System.out.println("xDistance = " + (xTarget - xPos));
+        System.out.println("yDistance = " + (yTarget - yPos));
     }
 
     public void newCoords(int xTarget, int yTarget) {
