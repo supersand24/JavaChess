@@ -18,8 +18,8 @@ public class Artifact {
     }
 
     public void newCoords(int xTarget, int yTarget) {
-        xPos = xTarget;
-        yPos = yTarget;
+        xPos = xTarget + 1;
+        yPos = yTarget + 1;
     }
 
     public boolean checkVertical(int xTarget, int yTarget, Board board) {
