@@ -5,8 +5,6 @@ import BoardScripts.Board;
 public class Knight extends Artifact{
 
     public Knight() {
-        xPos = 2;
-        yPos = 8;
         idCurrent = 'N';
         idOther = 'n';
     }
@@ -21,6 +19,7 @@ public class Knight extends Artifact{
             canMove = true;
         } else {
             System.out.println("Invalid Move, you can only move in an L shape with a Knight, 2 spaces any direction and 1 sideways.");
+            debugger(xTarget,yTarget);
         }
         return canMove;
     }

@@ -5,8 +5,6 @@ import BoardScripts.Board;
 public class Queen extends Artifact{
 
     public Queen() {
-        xPos = 4;
-        yPos = 8;
         idCurrent = 'Q';
         idOther = 'q';
     }
@@ -20,6 +18,7 @@ public class Queen extends Artifact{
             canMove = true;
         } else {
             System.out.println("Invalid Move, you can only move horizontally, vertically, or diagonally with a Queen.");
+            debugger(xTarget,yTarget);
         }
         return canMove;
     }

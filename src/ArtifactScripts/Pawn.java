@@ -7,8 +7,6 @@ public class Pawn extends Artifact{
     public boolean moved = false;
 
     public Pawn() {
-        xPos = 1;
-        yPos = 7;
         team = 0;
         idCurrent = 'X';
         idOther = 'y';
@@ -55,11 +53,13 @@ public class Pawn extends Artifact{
             } else if (Math.abs(yTarget - yPos) == 1) {
                 if (board.isPlaceFull(new int[]{xTarget,yTarget})) {
                     System.out.println("Invalid Move, there is a chess piece in that spot, and a Pawn may not capture whats directly in front of it.");
+                    debugger(xTarget,yTarget);
                 } else {
                     canMove = true;
                 }
             } else {
                 System.out.println("Invalid Move, you can only move 1 or 2(on the Pawn's first turn) spaces forwards.");
+                debugger(xTarget,yTarget);
             }
         //If target is on the next column over
         } else if (Math.abs(xTarget - xPos) == 1) {
@@ -68,18 +68,22 @@ public class Pawn extends Artifact{
                     canMove = true;
                 } else if (team == 1) {
                     System.out.println("Invalid Move, you are going the wrong direction.");
+                    debugger(xTarget,yTarget);
                 }
             } else if ((yTarget - yPos) < 0) {
                 if (team == 0) {
                     System.out.println("Invalid Move, you are going the wrong direction.");
+                    debugger(xTarget,yTarget);
                 } else if (team == 1) {
                     canMove = true;
                 }
             } else {
                 System.out.println("Invalid Move, you can only move diagonally by attacking, not horizontally.");
+                debugger(xTarget,yTarget);
             }
         } else {
             System.out.println("Invalid Move, you can only move 1 or 2(on the Pawn's first turn) spaces forwards, or attack forwards diagonally 1 space away.");
+            debugger(xTarget,yTarget);
         }
         return canMove;
     }

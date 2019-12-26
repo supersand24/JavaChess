@@ -5,8 +5,6 @@ import BoardScripts.Board;
 public class King extends Artifact {
 
     public King() {
-        xPos = 5;
-        yPos = 8;
         idCurrent = 'K';
         idOther = 'k';
     }
@@ -20,6 +18,7 @@ public class King extends Artifact {
                 canMove = true;
             } else {
                 System.out.println("Invalid Move, you can only move horizontally, vertically, or diagonally 1 space with a King.");
+                debugger(xTarget,yTarget);
             }
         }
         return canMove;

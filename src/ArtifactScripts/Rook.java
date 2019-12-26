@@ -5,8 +5,6 @@ import BoardScripts.Board;
 public class Rook extends Artifact{
 
     public Rook() {
-        xPos = 1;
-        yPos = 8;
         idCurrent = 'R';
         idOther = 'r';
     }
@@ -20,6 +18,7 @@ public class Rook extends Artifact{
             canMove = true;
         } else {
             System.out.println("Invalid Move, you can only move horizontally or vertically with a Rook.");
+            debugger(xTarget,yTarget);
         }
         return canMove;
     }

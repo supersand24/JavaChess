@@ -10,6 +10,15 @@ public class Artifact {
     public Character idCurrent;
     public Character idOther;
 
+    public void debugger(int xTarget, int yTarget) {
+        System.out.println("xPos = " + xPos);
+        System.out.println("yPos = " + yPos);
+        System.out.println("xTarget = " + xTarget);
+        System.out.println("yTarget = " + yTarget);
+        System.out.println("xDistance = " + (xTarget - xPos));
+        System.out.println("yDistance = " + (yTarget - yPos));
+    }
+
     public void newCoords(int xTarget, int yTarget) {
         xPos = xTarget + 1;
         yPos = yTarget + 1;
