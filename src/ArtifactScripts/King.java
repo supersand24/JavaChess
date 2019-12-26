@@ -13,6 +13,8 @@ public class King extends Artifact {
 
     public boolean checkIfValidMove(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
+        xTarget += 1;
+        yTarget += 1;
         if (Math.abs(xTarget - xPos) <= 1 || Math.abs(yTarget - yPos) <= 1) {
             if (checkVertical(xTarget, yTarget, board) || checkHorizontal(xTarget, yTarget, board) || checkDiagonally(xTarget, yTarget, board)) {
                 canMove = true;
