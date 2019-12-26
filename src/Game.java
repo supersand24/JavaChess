@@ -73,12 +73,12 @@ public class Game {
             }
             //move method
                 if (valid == true) {
-                    GameBoard.myboard[dest[0]][dest[1]].addArtifact(peiceToMove);
-                    GameBoard.myboard[start[1]][start[0]].removeArtifact();
+                    GameBoard.myboard[dest[1]][dest[0]].addArtifact(peiceToMove);
+                    GameBoard.myboard[start[0]][start[1]].removeArtifact();
                     //debug
                     System.out.println("PieceMoved");
                     GameBoard.flipBoard();
-                    GameBoard.toString();
+                    System.out.println(GameBoard.toString());
                 }
 
         }while(activeGame);
