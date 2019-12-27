@@ -51,7 +51,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos,yPos + pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xTarget, yTarget, board) + " in the way, at " + xPos + ", " + (yPos + pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos, yPos + pos, board) + " in the way, at " + xPos + ", " + (yPos + pos));
                             break;
                         }
                     }
@@ -64,7 +64,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos,yPos - pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xTarget, yTarget, board) + " in the way, at " + xPos + ", " + (yPos - pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos, yPos - pos, board) + " in the way, at " + xPos + ", " + (yPos - pos));
                             break;
                         }
                     }
@@ -87,7 +87,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos + pos,yPos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xTarget, yTarget, board) + " in the way, at " + (xPos + pos) + ", " + yPos);
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos + pos, yPos, board) + " in the way, at " + (xPos + pos) + ", " + yPos);
                             break;
                         }
                     }
@@ -100,7 +100,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos - pos,yPos - pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xTarget, yTarget, board) + " in the way, at " + (xPos - pos) + ", " + yPos);
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos - pos, yPos, board) + " in the way, at " + (xPos - pos) + ", " + yPos);
                             break;
                         }
                     }
@@ -124,7 +124,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos + pos,yPos + pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xTarget, yTarget, board) + " in the way, at " + (xPos + pos) + ", " + (yPos + pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos + pos, yPos + pos, board) + " in the way, at " + (xPos + pos) + ", " + (yPos + pos));
                             break;
                         }
                     }
@@ -136,7 +136,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos + pos,yPos - pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xTarget, yTarget, board) + " in the way, at " + (xPos + pos) + ", " + (yPos - pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos + pos, yPos - pos, board) + " in the way, at " + (xPos + pos) + ", " + (yPos - pos));
                             break;
                         }
                     }
@@ -148,7 +148,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos - pos,yPos - pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xTarget, yTarget, board) + " in the way, at " + (xPos - pos) + ", " + (yPos - pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos - pos, yPos - pos, board) + " in the way, at " + (xPos - pos) + ", " + (yPos - pos));
                             break;
                         }
                     }
@@ -160,7 +160,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos - pos,yPos + pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xTarget, yTarget, board) + " in the way, at " + (xPos - pos) + ", " + (yPos + pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos - pos, yPos + pos, board) + " in the way, at " + (xPos - pos) + ", " + (yPos + pos));
                             break;
                         }
                     }
