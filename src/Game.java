@@ -45,6 +45,7 @@ public class Game {
             peiceToMove = GameBoard.myboard[start[0]][start[1]].getPiece();
             //is actual piece
             Boolean real = isReal(peiceToMove);
+            if(!real) continue;
             //debug move id
             debugID(GameBoard,start,dest);
             //debug legal move Authentication
