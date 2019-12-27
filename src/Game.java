@@ -34,7 +34,7 @@ public class Game {
             feature is undeveloped.
              */
             moveCords = move.split("\\s+");
-            Boolean validInput = validMoveInput(moveCords);
+            boolean validInput = validMoveInput(moveCords);
             if(!validInput) continue;
             //note the start coordinates are reversed not sure why the have to be
             start[0]=Integer.parseInt(moveCords[1]);
@@ -44,21 +44,34 @@ public class Game {
 
             peiceToMove = GameBoard.myboard[start[0]][start[1]].getPiece();
             //is actual piece
-            Boolean real = isReal(peiceToMove);
+            boolean real = isReal(peiceToMove);
             if(!real) continue;
             Boolean mine = isMine(peiceToMove,GameBoard.getTeam());
-            if(!mine) continue;
+            if(!mine) {
+                System.out.println("That is not your piece!");
+                continue;
+            }
             //debug move id
             debugID(GameBoard,start,dest);
-            //debug legal move Authentication
+            //legal move Authentication ***doesn't check for checkmate
             peiceToMove.newCoords(start[1],start[0]);
             valid = peiceToMove.checkIfValidMove(dest[0], dest[1], GameBoard);
-
+            //legal capture Authentication
+            boolean cap;
+            if(GameBoard.myboard[dest[1]][dest[0]].getFull()) {
+                cap = !isMine(GameBoard.myboard[dest[1]][dest[0]].getPiece(), GameBoard.getTeam());
+            }else{
+                cap = true;
+            }
+            if(!cap){
+                System.out.println("You may not capture your own Piece!");
+                continue;
+            }
+            
             //move method
-            if (valid&&real) {
+            if (valid) {
                     GameBoard = move(peiceToMove,start,dest,GameBoard);
                 }
-
         }while(activeGame);
 
         //exit
@@ -98,7 +111,7 @@ public class Game {
         if (peiceToMove.team==team){
             return true;
         }
-        System.out.println("That is not your Piece!");
+        //System.out.println("That is not your Piece!");
         return false;
     }
     //debug methods
