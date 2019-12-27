@@ -29,18 +29,26 @@ public class Artifact {
         yPos = yTarget + 1;
     }
 
+    private boolean isPosNum(int num) {
+        if (num > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public boolean checkVertical(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
         if (xPos == xTarget) {
             //If going north
             if (yTarget - yPos > 0) {
                 for (int pos = 1; pos <= yTarget; pos++) {
-                    if (checkSpace(xPos,yPos + pos,board)) {
-                        System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos + pos));
+                    if ((yPos - pos) == yTarget) {
+                        canMove = true;
                         break;
                     } else {
-                        if ((yPos + pos) == yTarget) {
-                            canMove = true;
+                        if (checkSpace(xPos,yPos + pos,board)) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos + pos));
                             break;
                         }
                     }
@@ -48,12 +56,12 @@ public class Artifact {
             //If going South
             } else if (yTarget - yPos < 0) {
                 for (int pos = 1; pos <= yTarget; pos++) {
-                    if (checkSpace(xPos,yPos - pos,board)) {
-                        System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos - pos));
+                    if ((yPos - pos) == yTarget) {
+                        canMove = true;
                         break;
                     } else {
-                        if ((yPos - pos) == yTarget) {
-                            canMove = true;
+                        if (checkSpace(xPos,yPos - pos,board)) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos - pos));
                             break;
                         }
                     }
@@ -70,26 +78,26 @@ public class Artifact {
         if (yPos == yTarget) {
             //If going east
             if (xTarget - xPos > 0) {
-                for (int pos = 1; pos <= (Math.abs(xTarget - xPos)); pos++) {
-                    if (checkSpace(xPos + pos,yPos,board)) {
-                        System.out.println("Path Blocked, there is a piece in the way, at " + (xPos + pos) + ", " + yPos);
+                for (int pos = 1; pos <= xTarget; pos++) {
+                    if ((xPos + pos) == xTarget) {
+                        canMove = true;
                         break;
                     } else {
-                        if ((xPos + pos) == xTarget) {
-                            canMove = true;
+                        if (checkSpace(xPos + pos,yPos,board)) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + (xPos + pos) + ", " + yPos);
                             break;
                         }
                     }
                 }
             //If going west
             } else if (xTarget - xPos < 0) {
-                for (int pos = 1; pos <= (Math.abs(xTarget - xPos)); pos++) {
-                    if (checkSpace(xPos - pos,yPos,board)) {
-                        System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + yPos);
+                for (int pos = 1; pos <= xTarget; pos++) {
+                    if ((xPos - pos) == xTarget) {
+                        canMove = true;
                         break;
                     } else {
-                        if ((xPos - pos) == xTarget) {
-                            canMove = true;
+                        if (checkSpace(xPos - pos,yPos - pos,board)) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + yPos);
                             break;
                         }
                     }
@@ -103,61 +111,58 @@ public class Artifact {
     }
     public boolean checkDiagonally(int xTarget, int yTarget, Board board) {
         boolean canMove = false;
-        //If going Northeast
-        if (xTarget > xPos && yTarget > yPos) {
-            for (int pos = 1; pos <= (xTarget - xPos); pos++){
-                if (checkSpace(xPos + pos,yPos + pos,board)) {
-                    System.out.println("Path Blocked, there is a piece in the way, at " + (xPos + pos) + ", " + (yPos + pos));
-                    break;
-                } else {
+        int xDistance = xTarget - xPos;
+        int yDistance = yTarget - yPos;
+        if (Math.abs(xDistance) == Math.abs(yDistance)) {
+            if (isPosNum(xDistance) == true && isPosNum(yDistance) == true) {
+                for (int pos = 1; pos <= xDistance; pos++) {
                     if ((xPos + pos) == xTarget && (yPos + pos) == yTarget) {
                         canMove = true;
                         break;
+                    } else {
+                        if (checkSpace(xPos + pos,yPos + pos,board)) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + (xPos + pos) + ", " + (yPos + pos));
+                            break;
+                        }
                     }
                 }
-            }
-        //If going Southeast
-        } else if (xTarget > xPos && yTarget < yPos) {
-            for (int pos = 1; pos <= (xTarget - xPos); pos++){
-                if (checkSpace(xPos + pos,yPos - pos,board)) {
-                    System.out.println("Path Blocked, there is a piece in the way, at " + (xPos + pos) + ", " + (yPos - pos));
-                    break;
-                } else {
+            } else if (isPosNum(xDistance) == true && isPosNum(yDistance) == false) {
+                for (int pos = 1; pos <= xDistance; pos++) {
                     if ((xPos + pos) == xTarget && (yPos - pos) == yTarget) {
                         canMove = true;
                         break;
+                    } else {
+                        if (checkSpace(xPos + pos,yPos - pos,board)) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + (xPos + pos) + ", " + (yPos - pos));
+                            break;
+                        }
                     }
                 }
-            }
-        //If going Southwest
-        } else if (xTarget < xPos && yTarget < yPos) {
-            for (int pos = 1; pos <= (xTarget - xPos); pos++){
-                if (checkSpace(xPos - pos,yPos - pos,board)) {
-                    System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + (yPos - pos));
-                    break;
-                } else {
+            } else if (isPosNum(xDistance) == false && isPosNum(yDistance) == false) {
+                for (int pos = 1; pos <= xDistance; pos++) {
                     if ((xPos - pos) == xTarget && (yPos - pos) == yTarget) {
                         canMove = true;
                         break;
+                    } else {
+                        if (checkSpace(xPos - pos,yPos - pos,board)) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + (yPos - pos));
+                            break;
+                        }
                     }
                 }
-            }
-        //If going Northwest
-        } else if (xTarget < xPos && yTarget > yPos) {
-            for (int pos = 1; pos <= (xTarget - xPos); pos++){
-                if (checkSpace(xPos - pos,yPos + pos,board)) {
-                    System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + (yPos + pos));
-                    break;
-                } else {
+            } else if (isPosNum(xDistance) == false && isPosNum(yDistance) == true) {
+                for (int pos = 1; pos <= xDistance; pos++) {
                     if ((xPos - pos) == xTarget && (yPos + pos) == yTarget) {
                         canMove = true;
                         break;
+                    } else {
+                        if (checkSpace(xPos - pos,yPos + pos,board)) {
+                            System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + (yPos + pos));
+                            break;
+                        }
                     }
                 }
             }
-        //Error
-        } else {
-            System.out.println("ERROR: checkDiagonally() tried to check horizontally or vertically.");
         }
         return canMove;
     }
