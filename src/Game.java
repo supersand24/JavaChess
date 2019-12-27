@@ -46,6 +46,8 @@ public class Game {
             //is actual piece
             Boolean real = isReal(peiceToMove);
             if(!real) continue;
+            Boolean mine = isMine(peiceToMove,GameBoard.getTeam());
+            if(!mine) continue;
             //debug move id
             debugID(GameBoard,start,dest);
             //debug legal move Authentication
@@ -62,6 +64,8 @@ public class Game {
         //exit
         exit();
     }
+
+
 
     //verification methods
     private static boolean isReal(Artifact peiceToMove) {
@@ -89,6 +93,13 @@ public class Game {
             return false;
         }
         return true;
+    }
+    private static Boolean isMine(Artifact peiceToMove, int team) {
+        if (peiceToMove.team==team){
+            return true;
+        }
+        System.out.println("That is not your Piece!");
+        return false;
     }
     //debug methods
     private static void debugID(Board GameBoard,int[] start,int[]dest) {
