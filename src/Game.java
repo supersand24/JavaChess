@@ -92,6 +92,10 @@ public class Game {
     }
     //debug methods
     private static void debugID(Board GameBoard,int[] start,int[]dest) {
+        if (GameBoard.getTeam() == 1){
+         start = reverseAllNums(start);
+         dest = reverseAllNums(dest);
+        }
         System.out.print("you want to move: ");
         System.out.print(GameBoard.myboard[start[0]][start[1]].toString
                 (GameBoard.getTeam()));
@@ -180,5 +184,41 @@ public class Game {
         GameBoard.flipBoard();
         System.out.println(GameBoard.toString());
         return GameBoard;
+    }
+
+    //Other methods
+    public static int[] reverseAllNums(int[] toRev){
+        int[] reved = new int[toRev.length];
+        for (int i=0;i<toRev.length;i++) {
+            switch (toRev[i]){
+                case 0:
+                    reved[i] = 7;
+                    break;
+                case 1:
+                    reved[i] = 6;
+                    break;
+                case 2:
+                    reved[i] = 5;
+                    break;
+                case 3:
+                    reved[i] = 4;
+                    break;
+                case 4:
+                    reved[i] = 3;
+                    break;
+                case 5:
+                    reved[i] = 2;
+                    break;
+                case 6:
+                    reved[i] = 1;
+                    break;
+                case 7:
+                    reved[i] = 0;
+                    break;
+                default:reved[i] = 9;
+            }
+
+        }
+        return reved;
     }
 }
