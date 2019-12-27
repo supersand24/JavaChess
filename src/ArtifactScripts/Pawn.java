@@ -38,14 +38,14 @@ public class Pawn extends Artifact{
                     //Going Down
                     if ((yTarget - yPos) > 0) {
                         if (checkSpace(xPos,yPos + 1,board)) {
-                            System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos + 1));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xTarget, yTarget, board) + " in the way, at " + xPos + ", " + (yPos + 1));
                         } else {
                             canMove = true;
                         }
                     //Going Up
                     } else {
                         if (checkSpace(xPos,yPos - 1,board)) {
-                            System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos - 1));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xTarget, yTarget, board) + " in the way, at " + xPos + ", " + (yPos - 1));
                         } else {
                             canMove = true;
                         }
@@ -55,7 +55,7 @@ public class Pawn extends Artifact{
             } else if (Math.abs(yTarget - yPos) == 1) {
                 System.out.println("Distance is 1");
                 if (checkSpace(xTarget,yTarget,board)) {
-                    System.out.println("Invalid Move, there is a chess piece in that spot, and a Pawn may not capture whats directly in front of it.");
+                    System.out.println("Invalid Move, there is a " + getArtifactName(xTarget, yTarget, board) + " at " + xPos + ", " + (yPos - 1) + ", and a Pawn may not capture whats directly in front of it.");
                 } else {
                     canMove = true;
                 }
