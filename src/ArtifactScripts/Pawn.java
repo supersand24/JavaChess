@@ -64,17 +64,8 @@ public class Pawn extends Artifact{
             }
         //If target is on the next column over
         } else if (Math.abs(xTarget - xPos) == 1 && Math.abs(yTarget - yPos) == 1) {
-            System.out.println("Attacking");
             if ((yTarget - yPos) > 0) {
                 if (team == 0) {
-                    canMove = true;
-                } else if (team == 1) {
-                    System.out.println("Invalid Move, you are going the wrong direction.");
-                }
-            } else if ((yTarget - yPos) < 0) {
-                if (team == 0) {
-                    System.out.println("Invalid Move, you are going the wrong direction.");
-                } else if (team == 1) {
                     canMove = true;
                 }
             } else {
