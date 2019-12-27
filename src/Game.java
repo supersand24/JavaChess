@@ -48,7 +48,7 @@ public class Game {
             //debug move id
             debugID(GameBoard,start,dest);
             //debug legal move Authentication
-            peiceToMove.newCoords(start[0],start[1]);
+            peiceToMove.newCoords(start[1],start[0]);
             valid = peiceToMove.checkIfValidMove(dest[0], dest[1], GameBoard);
 
             //move method
@@ -64,7 +64,12 @@ public class Game {
 
     //verification methods
     private static boolean isReal(Artifact peiceToMove) {
-        if (peiceToMove.idCurrent.equals(' ')){
+        try {
+            if (peiceToMove.idCurrent.equals(' ')) {
+                System.out.println("not a valid piece!");
+                return false;
+            }
+        }catch(Exception e){
             System.out.println("not a valid piece!");
             return false;
         }
