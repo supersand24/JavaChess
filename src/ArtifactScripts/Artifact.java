@@ -20,7 +20,8 @@ public class Artifact {
     }
 
     public boolean checkSpace(int xTarget, int yTarget, Board board) {
-        return board.isPlaceFull(new int[]{xTarget - 1,yTarget - 1});
+        //System.out.println(board.myboard[xTarget-1][yTarget-1].toString(board.getTeam()));
+        return board.isPlaceFull(new int[]{yTarget - 1,xTarget - 1});
     }
 
     public void newCoords(int xTarget, int yTarget) {
