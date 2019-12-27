@@ -116,13 +116,13 @@ public class Game {
     }
     //debug methods
     private static void debugID(Board GameBoard,int[] start,int[]dest) {
-        if (GameBoard.getTeam() == 1){
-         start = reverseAllNums(start);
-         dest = reverseAllNums(dest);
-        }
         System.out.print("you want to move: ");
         System.out.print(GameBoard.myboard[start[0]][start[1]].toString
                 (GameBoard.getTeam()));
+        if (GameBoard.getTeam() == 1){
+            start = reverseAllNums(start);
+            dest = reverseAllNums(dest);
+        }
         System.out.print(" to ");
         System.out.println("(" + GameBoard.numToChar(dest[0]+1) + "," + (dest[1]+1) + ")");
 
