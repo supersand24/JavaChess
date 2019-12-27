@@ -27,6 +27,10 @@ public class Artifact {
         return (board.myboard[yTarget-1][xTarget-1].toString(board.getTeam()));
     }
 
+    public String convertCoordToChessPlace(int x, int y, Board board) {
+        return (board.numToChar(y) + Integer.toString(x));
+    }
+
     public void newCoords(int xTarget, int yTarget) {
         xPos = xTarget + 1;
         yPos = yTarget + 1;
@@ -51,7 +55,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos,yPos + pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos, yPos + pos, board) + " in the way, at " + xPos + ", " + (yPos + pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos, yPos + pos, board) + " in the way, at " + convertCoordToChessPlace(xPos,yPos + pos,board));
                             canMove = 2;
                             break;
                         }
@@ -65,7 +69,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos,yPos - pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos, yPos - pos, board) + " in the way, at " + xPos + ", " + (yPos - pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos, yPos - pos, board) + " in the way, at " + convertCoordToChessPlace(xPos,yPos - pos,board));
                             canMove = 2;
                             break;
                         }
@@ -89,7 +93,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos + pos,yPos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos + pos, yPos, board) + " in the way, at " + (xPos + pos) + ", " + yPos);
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos + pos, yPos, board) + " in the way, at " + convertCoordToChessPlace(xPos + pos,yPos,board));
                             canMove = 2;
                             break;
                         }
@@ -103,7 +107,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos - pos,yPos - pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos - pos, yPos, board) + " in the way, at " + (xPos - pos) + ", " + yPos);
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos - pos, yPos, board) + " in the way, at " + convertCoordToChessPlace(xPos - pos,yPos,board));
                             canMove = 2;
                             break;
                         }
@@ -128,7 +132,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos + pos,yPos + pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos + pos, yPos + pos, board) + " in the way, at " + (xPos + pos) + ", " + (yPos + pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos + pos, yPos + pos, board) + " in the way, at " + convertCoordToChessPlace(xPos + pos,yPos + pos,board));
                             canMove = 2;
                             break;
                         }
@@ -141,7 +145,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos + pos,yPos - pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos + pos, yPos - pos, board) + " in the way, at " + (xPos + pos) + ", " + (yPos - pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos + pos, yPos - pos, board) + " in the way, at " + convertCoordToChessPlace(xPos + pos,yPos - pos,board));
                             canMove = 2;
                             break;
                         }
@@ -154,7 +158,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos - pos,yPos - pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos - pos, yPos - pos, board) + " in the way, at " + (xPos - pos) + ", " + (yPos - pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos - pos, yPos - pos, board) + " in the way, at " + convertCoordToChessPlace(xPos - pos,yPos - pos,board));
                             canMove = 2;
                             break;
                         }
@@ -167,7 +171,7 @@ public class Artifact {
                         break;
                     } else {
                         if (checkSpace(xPos - pos,yPos + pos,board)) {
-                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos - pos, yPos + pos, board) + " in the way, at " + (xPos - pos) + ", " + (yPos + pos));
+                            System.out.println("Path Blocked, there is a " + getArtifactName(xPos - pos, yPos + pos, board) + " in the way, at " + convertCoordToChessPlace(xPos - pos,yPos + pos,board));
                             canMove = 2;
                             break;
                         }
