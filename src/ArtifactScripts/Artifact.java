@@ -19,6 +19,10 @@ public class Artifact {
         System.out.println("yDistance = " + (yTarget - yPos));
     }
 
+    public boolean checkSpace(int xTarget, int yTarget, Board board) {
+        return board.isPlaceFull(new int[]{xTarget - 1,yTarget - 1});
+    }
+
     public void newCoords(int xTarget, int yTarget) {
         xPos = xTarget + 1;
         yPos = yTarget + 1;
@@ -30,7 +34,7 @@ public class Artifact {
             //If going north
             if (yTarget - yPos > 0) {
                 for (int pos = 1; pos <= yTarget; pos++) {
-                    if (board.isPlaceFull(new int[]{xPos, (yPos + pos)})) {
+                    if (checkSpace(xPos,yPos + pos,board)) {
                         System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos + pos));
                         break;
                     } else {
@@ -43,7 +47,7 @@ public class Artifact {
             //If going South
             } else if (yTarget - yPos < 0) {
                 for (int pos = 1; pos <= yTarget; pos++) {
-                    if (board.isPlaceFull(new int[]{xPos, (yPos - pos)})) {
+                    if (checkSpace(xPos,yPos - pos,board)) {
                         System.out.println("Path Blocked, there is a piece in the way, at " + xPos + ", " + (yPos - pos));
                         break;
                     } else {
@@ -66,7 +70,7 @@ public class Artifact {
             //If going east
             if (xTarget - xPos > 0) {
                 for (int pos = 1; pos <= (Math.abs(xTarget - xPos)); pos++) {
-                    if (board.isPlaceFull(new int[]{(xPos + pos), yPos})) {
+                    if (checkSpace(xPos + pos,yPos,board)) {
                         System.out.println("Path Blocked, there is a piece in the way, at " + (xPos + pos) + ", " + yPos);
                         break;
                     } else {
@@ -79,7 +83,7 @@ public class Artifact {
             //If going west
             } else if (xTarget - xPos < 0) {
                 for (int pos = 1; pos <= (Math.abs(xTarget - xPos)); pos++) {
-                    if (board.isPlaceFull(new int[]{(xPos - pos), yPos})) {
+                    if (checkSpace(xPos - pos,yPos,board)) {
                         System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + yPos);
                         break;
                     } else {
@@ -101,7 +105,7 @@ public class Artifact {
         //If going Northeast
         if (xTarget > xPos && yTarget > yPos) {
             for (int pos = 1; pos <= (xTarget - xPos); pos++){
-                if (board.isPlaceFull(new int[]{(xPos + pos),(yPos + pos)})) {
+                if (checkSpace(xPos + pos,yPos + pos,board)) {
                     System.out.println("Path Blocked, there is a piece in the way, at " + (xPos + pos) + ", " + (yPos + pos));
                     break;
                 } else {
@@ -114,7 +118,7 @@ public class Artifact {
         //If going Southeast
         } else if (xTarget > xPos && yTarget < yPos) {
             for (int pos = 1; pos <= (xTarget - xPos); pos++){
-                if (board.isPlaceFull(new int[]{(xPos + pos),(yPos + pos)})) {
+                if (checkSpace(xPos + pos,yPos - pos,board)) {
                     System.out.println("Path Blocked, there is a piece in the way, at " + (xPos + pos) + ", " + (yPos - pos));
                     break;
                 } else {
@@ -127,7 +131,7 @@ public class Artifact {
         //If going Southwest
         } else if (xTarget < xPos && yTarget < yPos) {
             for (int pos = 1; pos <= (xTarget - xPos); pos++){
-                if (board.isPlaceFull(new int[]{(xPos + pos),(yPos + pos)})) {
+                if (checkSpace(xPos - pos,yPos - pos,board)) {
                     System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + (yPos - pos));
                     break;
                 } else {
@@ -140,7 +144,7 @@ public class Artifact {
         //If going Northwest
         } else if (xTarget < xPos && yTarget > yPos) {
             for (int pos = 1; pos <= (xTarget - xPos); pos++){
-                if (board.isPlaceFull(new int[]{(xPos + pos),(yPos + pos)})) {
+                if (checkSpace(xPos - pos,yPos + pos,board)) {
                     System.out.println("Path Blocked, there is a piece in the way, at " + (xPos - pos) + ", " + (yPos + pos));
                     break;
                 } else {
