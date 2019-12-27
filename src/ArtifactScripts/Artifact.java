@@ -11,11 +11,11 @@ public class Artifact {
     public Character idOther;
 
     public void debugger(int xTarget, int yTarget) {
-        System.out.println("xPos = " + xPos);
-        System.out.println("yPos = " + yPos);
-        System.out.println("xTarget = " + xTarget);
-        System.out.println("yTarget = " + yTarget);
-        System.out.println("xDistance = " + (xTarget - xPos));
+        System.out.print("xPos = " + xPos + " - ");
+        System.out.print("yPos = " + yPos + " - ");
+        System.out.print("xTarget = " + xTarget + " - ");
+        System.out.print("yTarget = " + yTarget + " - ");
+        System.out.print("xDistance = " + (xTarget - xPos + " - "));
         System.out.println("yDistance = " + (yTarget - yPos));
     }
 
@@ -126,8 +126,11 @@ public class Artifact {
         int yDistance = yTarget - yPos;
         if (Math.abs(xDistance) == Math.abs(yDistance)) {
             if (isPosNum(xDistance) == true && isPosNum(yDistance) == true) {
-                for (int pos = 1; pos <= xDistance; pos++) {
+                System.out.println("Reached check Northeast");
+                for (int pos = 1; pos <= Math.abs(xDistance); pos++) {
+                    System.out.print(pos);
                     if ((xPos + pos) == xTarget && (yPos + pos) == yTarget) {
+                        System.out.println("Successful");
                         canMove = 1;
                         break;
                     } else {
@@ -139,8 +142,11 @@ public class Artifact {
                     }
                 }
             } else if (isPosNum(xDistance) == true && isPosNum(yDistance) == false) {
-                for (int pos = 1; pos <= xDistance; pos++) {
+                System.out.println("Reached check Southeast");
+                for (int pos = 1; pos <= Math.abs(xDistance); pos++) {
+                    System.out.print(pos);
                     if ((xPos + pos) == xTarget && (yPos - pos) == yTarget) {
+                        System.out.println("Successful");
                         canMove = 1;
                         break;
                     } else {
@@ -152,8 +158,11 @@ public class Artifact {
                     }
                 }
             } else if (isPosNum(xDistance) == false && isPosNum(yDistance) == false) {
-                for (int pos = 1; pos <= xDistance; pos++) {
+                System.out.println("Reached check Southwest");
+                for (int pos = 1; pos <= Math.abs(xDistance); pos++) {
+                    System.out.print(pos);
                     if ((xPos - pos) == xTarget && (yPos - pos) == yTarget) {
+                        System.out.println("Successful");
                         canMove = 1;
                         break;
                     } else {
@@ -165,8 +174,11 @@ public class Artifact {
                     }
                 }
             } else if (isPosNum(xDistance) == false && isPosNum(yDistance) == true) {
-                for (int pos = 1; pos <= xDistance; pos++) {
+                System.out.println("Reached check Northwest");
+                for (int pos = 1; pos <= Math.abs(xDistance); pos++) {
+                    System.out.print(pos);
                     if ((xPos - pos) == xTarget && (yPos + pos) == yTarget) {
+                        System.out.println("Successful");
                         canMove = 1;
                         break;
                     } else {
