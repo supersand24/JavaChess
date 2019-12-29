@@ -1,6 +1,5 @@
 # JavaChess
 >Java Project, 1 week timeline.
-<hr>
-**Team Members**
-Justin Sandman *@Supersand24*
-Joshua "Mart" Miller *@Merchant151*
+## Team Members
+1. Justin Sandman *@Supersand24*
+2. Joshua "Mart" Miller *@Merchant151*
